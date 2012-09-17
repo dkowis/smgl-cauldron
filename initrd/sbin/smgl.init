@@ -157,7 +157,7 @@ main()  {
 
 # here is the real start of this shell script
 
-export PATH=/bin:/usr/bin:/sbin:/usr/sbin
+export PATH=/bin:/usr/bin:/sbin:/usr/sbin:/lib/udev
 
 mount -n -t proc  proc  /proc
 mount -n -t sysfs sys	/sys
