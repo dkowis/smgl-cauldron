@@ -22,6 +22,7 @@ init.d
 installwatch
 kbd
 libidn
+libmpc
 libtool
 locale
 make
