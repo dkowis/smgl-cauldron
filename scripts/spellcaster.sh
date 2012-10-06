@@ -217,7 +217,7 @@ function prepare_target() {
 		modify_config /etc/sorcery/local/config PRESERVE off
 		modify_config /etc/sorcery/local/config PROMPT_DELAY 0
     #I want more compiles
-    modify_config /etc/sorcery/local/compile_config MAKE_NJOBS 5
+    modify_config /etc/sorcery/local/compile_config MAKE_NJOBS 7
 	CONFIGURE
 
 	# silent compiles by default
