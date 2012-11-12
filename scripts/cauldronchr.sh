@@ -57,9 +57,14 @@ fi
 CHROOT_DIR="${CHROOT_DIR:-.}"
 [[ $# -gt 0 ]] && CHROOT_CMD="$@"
 CHROOT_CMD="${CHROOT_CMD:-/bin/bash}"
-
-mount --bind /dev "$CHROOT_DIR"/dev &&
-mount --bind /dev/pts "$CHROOT_DIR"/dev/pts &&
+# If it's devtmpfs we need to do something differently. bind mounting seems to cause problems
+if [[ "$(grep devtmpfs /proc/filesystems)" == "" ]]; then
+	mount --bind /dev "$CHROOT_DIR"/dev &&
+	mount --bind /dev/pts "$CHROOT_DIR"/dev/pts
+else
+	mount -t devtmpfs none "$CHROOT_DIR"/dev &&
+	mount -t devpts none "$CHROOT_DIR"/dev/pts
+fi &&
 mount --bind /proc "$CHROOT_DIR"/proc &&
 
 export CAULDRON_CHROOT="$CHROOT_DIR"
