@@ -80,7 +80,7 @@ fi
 
 if $COMPRESS || [[ -n $KEEP ]]
 then
-	bzip2 -f -v $KEEP "${ISO_VERSION}.iso"
+	pbzip2 -f -v $KEEP "${ISO_VERSION}.iso"
 fi
 
 [[ $ISOCHOWN ]] &&  chown "$CHOWNSTR" "${ISO_VERSION}".iso*
