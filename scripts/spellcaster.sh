@@ -284,9 +284,9 @@ function prepare_target() {
 
 		SPOOL=/tmp
 		stable="stable.tar.bz2"
-		codex="$SYSDIR/var/lib/sorcery/codex"
+		codex="/var/lib/sorcery/codex"
 		grimoire='GRIMOIRE_DIR[0]=/var/lib/sorcery/codex/stable'
-		index="$SYSDIR/etc/sorcery/local/grimoire"
+		index="/etc/sorcery/local/grimoire"
 		
 		# update to latest stable grimoire
 		(
