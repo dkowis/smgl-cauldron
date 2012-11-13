@@ -59,7 +59,7 @@ echo "Entering $SYSDIR"
 cd $SYSDIR &&
 
 echo "Creating $SYSTAR, please be patient"
-tar $VERBOSE -jcf "$SYSTAR" *
+tar --use-compress-program=pbzip2 $VERBOSE -cf "$SYSTAR" *
 echo "Output written to: $SYSTAR"
 
 exit
